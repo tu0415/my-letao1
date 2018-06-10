@@ -7,6 +7,9 @@
     padding: 0;
 }
 
+ul,ol {
+    list-style: none;
+}
 img {
     // 清除图片底部的3px 的间距
     vertical-align: middle;
@@ -72,5 +75,28 @@ img {
         &.active {
             color:orange;
         }
+    }
+}
+
+// 搜索框的样式
+.search-form {
+    padding: 10px;
+    padding-right: 63px;
+    position: relative;
+    .search-input {
+        border-radius: 3px 0px 0px 3px;
+        margin-bottom: 0px;
+        height: 33px;
+        font-size: 14px;
+        border-color: @mainColor;
+    }
+    .btn-search {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        height: 33px;
+        border-radius: 0px 3px 3px 0px;
+        background-color: @mainColor;
+        border-color: @mainColor;
     }
 }

@@ -1,0 +1,60 @@
+@import "./base.less";
+#main {
+    margin-top: 45px;
+    position: relative;
+    .search-form {
+        padding: 10px;
+        padding-right: 63px;
+        .search-input {
+            border-radius: 3px 0px 0px 3px;
+            margin-bottom: 0px;
+            height: 33px;
+            font-size: 14px;
+            border-color: @mainColor;
+        }
+        .btn-search {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            height: 33px;
+            border-radius: 0px 3px 3px 0px;
+            background-color: @mainColor;
+            border-color: @mainColor;
+        }
+    }
+    .search-history {
+        padding: 5px 10px;
+        .title {
+            font-size: 12px;
+            a {
+                color: #666;
+                display: block;
+                line-height: 20px;
+            }
+        }
+    }
+    .content {
+        padding: 0px 10px;
+        >ul {
+            border: 1px solid #ccc;
+            >li {
+                border-bottom: 1px solid #ccc;
+                padding: 0px 10px;
+                font-size: 14px;
+                &:last-child {
+                    border-bottom: 0 solid #000;
+                }
+                a {
+                    line-height: 30px;
+                    color: #666;
+                    height: 30px;
+                    display: block;
+                }
+                span {
+                    line-height: 30px;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+}
