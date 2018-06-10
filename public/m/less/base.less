@@ -1,0 +1,76 @@
+// 主题色变量
+
+@mainColor:#006699;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    // 清除图片底部的3px 的间距
+    vertical-align: middle;
+}
+// 头部样式
+#header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 45px;
+    z-index: 999;
+    width: 100%;
+    background-color: @mainColor;
+    h4 {
+        margin: 0px;
+        text-align: center;
+        line-height: 45px;
+        font-weight: normal;
+        color: #fff;
+    }
+    .fa-search {
+        position: absolute;
+        color: white;
+        right: 15px;
+        top: 15px;
+    }
+    .fa-arrow-left {
+        position: absolute;
+        color: white;
+        top: 15px;
+        left: 15px;
+    }
+    .search-form {
+        // background-color: #fff;
+        padding: 5px 45px;
+        >input {
+            background-color: #fff;
+            margin-bottom: 0;
+            text-align: left;
+            font-size: 14px;
+        }
+    }
+}
+
+// 底部样式
+#footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    left: 0;
+    z-index: 999;
+    background-color: @mainColor;
+    a {
+        font-size: 14px;
+        color: white;
+        display: block;
+        text-align: center;
+        padding: 7px 0;
+        >span {
+            display: block;
+            margin-top: 3px;
+        }
+        &.active {
+            color:orange;
+        }
+    }
+}

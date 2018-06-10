@@ -1,0 +1,83 @@
+//  引入公共样式
+@import "./base.less";
+
+
+//定义全局颜色
+@mainColor: #006699;
+body {
+    background-color: #fff;
+}
+
+
+// 中间部分样式
+#main {
+    // 导航区域
+    margin-top: 45px;
+    .mui-content {
+        padding: 10px;
+        background-color: #fff;
+        border-bottom: 1px solid #ccc;
+        >div {
+            a {
+                display: block;
+                img {
+                    width: 100%;
+                    border: 0px solid #000;
+                }
+            }
+        }
+    }
+    // 广告区域
+    #banner {
+        padding: 0px 10px;
+        a {
+            display: block;
+            >img {
+                width: 100%;
+                // vertical-align: middle;
+            }
+        }
+    } 
+    // 品牌跟运动区域公共样式
+    .brand,.sport,.women,.men{
+        padding: 0 10px;
+        a {
+            display: block;
+            img {
+                width: 100%;
+
+            }
+        }
+    } 
+    // 运动生活专区样式 
+    .sport,.women,.men {
+       .content {
+           .mui-row {
+               >div {
+                   padding: 5px;
+                   .product {
+                       text-align: center;
+                       box-shadow: 0px 0px 5px #ccc;
+                       padding-bottom: 8px;
+                        img{
+                            width: 100%;
+                        }
+                        .product-name {
+                            padding: 0 10px;
+                        }
+                        .product-price{
+                            font-size: 14px;
+                            .new-price{
+                                color: red;
+                            }
+                            .old-price{
+                                color:#ccc;
+                            }
+                        }
+                   }
+               }
+           }
+       }
+    }
+}
+
