@@ -115,13 +115,14 @@ Letao.prototype = {
             });
         })
     },
- 
+
+  // 进入商品列表页面马上执行搜索
     getProductList:function (obj,callback) {
         $.ajax({
             url:'/product/queryProduct',
             data:{
                 page:obj.page || 1,
-                pageSize:obj.pageSize || 2,
+                pageSize:obj.pageSize || 6,
                 proName:obj.proName,
                 price:obj.price,
                 num:obj.num 
@@ -140,7 +141,7 @@ Letao.prototype = {
    // 商品列表的排序
    productSort: function() {
     // 1. 给所有排序按钮添加点击事件 tap
-    $('.productlist .title').on('tap', 'a', function() {
+    $('.produclist .title').on('tap', 'a', function() {
         // 2. 跟当前点击的a获取当前a链接的排序方式
         var sortType = $(this).data('sort-type');
         // 3. 获取当前a上data-sort排序顺序  1代表升序 2代表降序
@@ -158,10 +159,11 @@ Letao.prototype = {
         // 6. 判断当前sortType是哪个排序方式 如果是price就执行价格排序 如果是num就执行num排序
         if (sortType == 'price') {
             // 7. 当前是排序类型是price 就调用获取数据函数传入price的排序方式
-            letao.getProdcutList({
+            letao.getProductList({
                 proName: search,
                 price: sort
             }, function(data) {
+                console.log(data);
                 // 4. 把数据调用模板引擎生成html
                 var html = template('productListTmp', data);
                 // 5. 把生成的模板绑定到商品列表的内容
@@ -169,13 +171,13 @@ Letao.prototype = {
             });
         } else if (sortType == 'num') {
             // 8. 当前是排序类型是num 就调用获取数据函数传入num的排序方式
-            letao.getProdcutList({
+            letao.getProductList({
                 proName: search,
                 num: sort
             }, function(data) {
                 // 4. 把数据调用模板引擎生成html
                 var html = template('productListTmp', data);
-                console.log(html);
+                // console.log(html);
                 
                 // 5. 把生成的模板绑定到商品列表的内容
                 $('.content .mui-row').html(html);
