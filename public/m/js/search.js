@@ -67,7 +67,7 @@ Letao.prototype = {
             	// 10. 添加完成后调用查询方法刷新页面
 			letao.queryHistory();
 			// 11. 点击了搜索按钮跳转到商品列表页面
-			window.location.href = 'productlist.html';
+			window.location.href = 'productlist.html?search='+search;
         })
    },
 

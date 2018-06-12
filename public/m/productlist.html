@@ -26,8 +26,6 @@
     </header>
 
     <!-- 2. 中间部分 -->
-
-
     <main id="main">
         <!-- 搜索框 -->
         <div class="box">
@@ -50,13 +48,13 @@
                                     </a>
                                 </div>
                                 <div class="mui-col-xs-3">
-                                    <a href="#">
+                                    <a href="#" data-sort-type="price">
                                         <span>价格</span>
                                         <span class="fa fa-angle-down"></span>
                                     </a>
                                 </div>
                                 <div class="mui-col-xs-3">
-                                    <a href="#">
+                                    <a href="#" data-sort-type="num">
                                         <span>销量</span>
                                         <span class="fa fa-angle-down"></span>
                                     </a>
@@ -71,7 +69,7 @@
                         </div>
                         <div class="content">
                             <div class="mui-row">
-                                <div class="mui-col-xs-6 box">
+                                <!-- <div class="mui-col-xs-6 box">
                                     <a href="#" class="product">
                                         <img src="./images/product.jpg" alt="">
                                         <p class="product-name">adidas阿迪达斯 男式 场下休闲篮球鞋S83700 </p>
@@ -114,7 +112,7 @@
                                         </div>
                                         <button type="button" class="product-buy mui-btn mui-btn-primary">立即购买</button>
                                     </a>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -122,6 +120,7 @@
             </div>
         </div>
     </main>
+
     <!-- 3. 底部 -->
     <footer id="footer">
         <div class="mui-row">
@@ -148,19 +147,37 @@
         </div>
     </footer>
 
-    </ul>
+    <!-- 创建模板引擎 -->
+    <script id="productListTmp" type="text/html">
+    {{each data as value i}}
+    <div class="mui-col-xs-6 box">
+        <a href="./detail.html?productId={{value.id}}" class="product">
+            <img src="{{value.pic[0].picAddr}}" alt="">
+            <p class="product-name">{{value.proName}}</p>
+            <div class="product-price">
+                <span class="new-price">¥{{value.price}}</span>
+                <del class="old-price">¥{{value.oldPrice}}</del>
+            </div>
+            <button type="button" class="product-buy mui-btn mui-btn-primary">立即购买</button>
+        </a>
+    </div>
+    {{/each}}
     </script>
+
     <!-- 5. 引入MUI的js 文件 提供MUI一些特效  -->
     <script src="./lib/mui/js/mui.js"></script>
+
     <!-- 6. 引入获取元素要使用的zepto -->
     <script src="./lib/zepto/zepto.min.js"></script>
+
     <!-- 7. 引入模板引擎的js文件 用来渲染页面 -->
     <script src="./lib/artTemplate/template.js"></script>
+    
     <!-- 8. 引入自己js -->
     <script src="./js/productlist.js"></script>
 </body>
 
 </html>
 <script>
-
+ $('div').o
 </script>
